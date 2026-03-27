@@ -1,0 +1,1 @@
+# okinawayaeyama-nippo-kinkoku
