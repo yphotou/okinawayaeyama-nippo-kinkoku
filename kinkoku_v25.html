@@ -45,6 +45,10 @@ body {
   border: 2px solid #000; margin: 6px 3px; height: calc(100% - 12px);
   overflow: hidden;
 }
+#col-maebun-gai {
+  font-size: 13px; line-height: 1.4; padding: 8px 2px;
+  overflow: hidden;
+}
 #col-ki { font-size: 13px; line-height: 1.4; padding: 8px 2px; overflow: hidden; }
 #col-datetime { font-size: 13px; line-height: 1.4; padding: 8px 2px; overflow: hidden; }
 .dt-label { font-weight: bold; font-size: 13px; display: block; margin-bottom: 3px; }
@@ -266,6 +270,11 @@ function getMaebun(type,kyonen,shiboDt){
     default:return'';
   }
 }
+function getMaebunNai(){
+  const name = document.getElementById('shisetsu_name').value||'';
+  if(!name) return '';
+  return name+'のスタッフ皆様の献身的な介護に深く感謝申し上げます。';
+}
 function getChuiLines(){
   const ls=[];
   if(document.getElementById('chk_kyoka').checked)ls.push('※勝手ながらご供花の儀はご辞退申し上げます。');
@@ -294,7 +303,8 @@ function render(){
   const PAD=8;
   const wA=42;   /* タイトル */
   const wC=62;   /* 故人名 */
-  const wD=90;   /* 前文（枠囲み） */
+  const wD=60;    /* 前文（枠囲み）  */
+  const wDi=30;   /* 前文内） */
   const wKi=22;  /* 記 */
   const wDt=80;  /* 日時 */
   const wBa=80;  /* 場所 */
@@ -303,7 +313,7 @@ function render(){
   const wG=54;   /* 喪主名 */
   const wH=22;   /* 住所 */
   const wJ=renmeiCols>0?22*renmeiCols:0; /* 連名(1人22px、下端揃え) */
-  const totalW=PAD*2+wJ+wH+wG+wI+wK+wBa+wDt+wKi+wD+wC+wA;
+  const totalW=PAD*2+wJ+wH+wG+wI+wK+wBa+wDt+wKi+wD+wDi+wC+wA;
   const daishi=document.getElementById('daishi');
   daishi.style.width=totalW+'px';
   let left=PAD;
@@ -337,7 +347,9 @@ function render(){
       '<span class="kj-gi">儀</span>'+
     '</span>');
   /* D 前文（枠囲み） */
-  col('col-maebun',lD,wD,esc(maebun));
+  col('col-maebun-gai',lD,wD,esc(maebun));
+  const maebunNai=getMaebunNai();
+  col('col-maebun',lD+wD,wDi,maebunNai?'<span style="font-size:11px;line-height:1.35;">'+esc(maebunNai)+'</span>':'');
   /* Ki 記 */
   col('col-ki',lKi,wKi,'記');
   /* Dt 日時 */
