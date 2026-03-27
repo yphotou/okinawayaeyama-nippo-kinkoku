@@ -275,7 +275,7 @@ function wareki(y,m,d){y=parseInt(y);m=parseInt(m);d=parseInt(d);const dt=new Da
 function md(s){if(!s)return'';const[y,mm,dd]=s.split('-');return n2k(mm)+'月'+n2k(dd)+'日';}
 function t2k(s){if(!s)return'';const[h,mi]=s.split(':').map(Number);const ap=h<12?'午前':'午後';const h12=h===0?12:h>12?h-12:h;return ap+n2k(h12)+'時'+(mi>0?n2k(mi)+'分':'');}
 function todayWareki(){const n=new Date();return wareki(n.getFullYear(),n.getMonth()+1,n.getDate());}
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/\u003C/g,'&lt;').replace(/\u003E/g,'&gt;');}
+function esc(s){s=String(s||'');s=s.split('&').join('&amp;');s=s.split('<').join('&lt;');s=s.split('>').join('&gt;');return s;}
 function escBR(s){return esc(s).replace(/
 /g,'<br>');}
 const KJ={shibo:'',tuya:'',koku:''};
