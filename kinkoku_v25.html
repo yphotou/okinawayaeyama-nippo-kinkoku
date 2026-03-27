@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=dvice-width,initial-scale=1">
 <title>謹告台紙 通常版</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,7 +41,7 @@ body {
 .kj-kanji { font-size: 26px; font-weight: 900; letter-spacing: 2px; line-height: 1.1; }
 .kj-gi { font-size: 15px; display: block; margin-top: 3px; }
 #col-maebun {
-  font-size: 11px; line-height: 1.35;
+  font-size: 10px; line-height: 1.3; 
   border: 2px solid #000; margin: 6px 3px; height: calc(100% - 12px);
   overflow: hidden;
 }
@@ -307,8 +307,8 @@ function render(){
   const PAD=8;
   const wA=42;   /* タイトル */
   const wC=62;   /* 故人名 */
-  const wD=40;    /* 前文（枠囲み）  */
-  const wDi=50;   /* 前文内） */
+  const wD=35;    /* 前文（枠囲み）  */
+  const wDi=55;   /* 前文内） */
   const wKi=22;  /* 記 */
   const wDt=80;  /* 日時 */
   const wBa=80;  /* 場所 */
@@ -352,7 +352,7 @@ function render(){
     '</span>');
   /* D 前文（枠囲み） */
   const maebunNai=getMaebunNai();
-  col('col-maebun',lD,wDi,maebunNai?'<span style="font-size:11px;line-height:1.35;">'+esc(maebunNai)+'</span>':'');
+  col('col-maebun',lD,wDi,maebunNai?'<span style="font-size:10px;line-height:1.3;  ">'+esc(maebunNai)+'</span>':'');
   col('col-maebun-gai',lD+wDi,wD,esc(maebun));
   /* Ki 記 */
   col('col-ki',lKi,wKi,'記');
