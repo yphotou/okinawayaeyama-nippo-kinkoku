@@ -20,18 +20,13 @@ body{
   position:absolute;top:0;height:100%;
   writing-mode:vertical-rl;text-orientation:mixed;overflow:hidden;
 }
-
 /* タイトル */
 #col-title{
   display:flex;align-items:center;justify-content:center;
   font-size:22px;font-weight:900;letter-spacing:6px;line-height:1.0;
   padding:4px;
 }
-
-/* 故人名: writing-mode:vertical-rl + display:flex + flex-direction:column
-   → 縦書きモードではflex columnが「右から左」になる
-   → 右側: ふりがな(細)、中央: 続柄+氏名+儀、左側: 何もなし
-   実装: horizontal-tbで内部制御する */
+/* 故人名: horizontal-tbで内部制御 */
 #col-kojin{
   writing-mode:horizontal-tb;
   display:flex;flex-direction:row;direction:rtl;
@@ -41,7 +36,7 @@ body{
 .kj-kana-col{
   writing-mode:vertical-rl;
   font-size:9px;line-height:1.2;
-  flex-shrink:0;width:11px;direction:ltr;
+  flex-shrink:0;width:12px;direction:ltr;
   display:flex;align-items:flex-start;justify-content:flex-start;
   padding-top:4px;color:#555;
 }
@@ -53,12 +48,8 @@ body{
 .kj-zoku{font-size:11px;display:block;}
 .kj-kanji{font-size:28px;font-weight:900;letter-spacing:2px;line-height:1.0;display:block;}
 .kj-gi{font-size:11px;display:block;margin-top:2px;}
-
 /* 前文（施設名：枠の外） */
-#col-maebun-nai{
-  font-size:8.5px;line-height:1.45;padding:5px 2px;overflow:hidden;
-}
-
+#col-maebun-nai{font-size:8.5px;line-height:1.45;padding:5px 2px;overflow:hidden;}
 /* 前文枠囲み */
 #col-maebun{
   font-size:8.5px;line-height:1.5;
@@ -66,75 +57,65 @@ body{
   margin:5px 0;height:calc(100% - 10px);
   padding:4px 3px;overflow:hidden;
 }
-
 /* 記 */
 #col-ki{
   font-size:14px;font-weight:bold;
   display:flex;align-items:center;justify-content:center;
   padding:4px 2px;
 }
-
 /* 日時 */
 #col-datetime{font-size:10px;line-height:1.5;padding:5px 2px;overflow:hidden;}
 .dt-label{font-weight:bold;font-size:13px;display:block;margin-bottom:3px;}
-
 /* 場所 */
 #col-venue{font-size:10px;line-height:1.4;padding:5px 2px;overflow:hidden;}
 .v-label{font-weight:bold;font-size:13px;display:block;margin-bottom:3px;}
 .v-name{font-size:13px;font-weight:bold;display:block;line-height:1.1;}
 .v-sub{font-size:8px;display:block;}
-
 /* 付記 */
 #col-chui{
   font-size:8.5px;line-height:1.4;padding:4px 1px;overflow:hidden;
   display:flex;flex-direction:column;align-items:flex-start;
 }
 .chui-item{writing-mode:vertical-rl;font-size:8.5px;line-height:1.4;flex-shrink:0;width:28px;padding:0 1px;}
-
 /* 掲載日 */
 #col-pubdate{
   font-size:9.5px;line-height:1.3;padding:5px 1px;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
 }
-
-/* 喪主: horizontal-tbで内部制御、下揃え */
+/* 喪主: flex-start(上揃え)で確実に台紙内に収める */
 #col-soshu{
   writing-mode:horizontal-tb;
   display:flex;flex-direction:row;direction:rtl;
-  align-items:flex-end;
-  padding:0 0 8px 0;overflow:hidden;
+  align-items:flex-start;
+  padding:6px 0;overflow:hidden;
   height:100%;
 }
 .ss-label{
   writing-mode:vertical-rl;font-size:11px;font-weight:bold;
   line-height:1.2;flex-shrink:0;width:13px;direction:ltr;
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  padding-bottom:2px;
+  padding-top:2px;
 }
 .ss-kana{
   writing-mode:vertical-rl;font-size:8px;line-height:1.2;
   flex-shrink:0;width:9px;direction:ltr;
-  display:flex;align-items:flex-end;
-  padding-bottom:6px;color:#555;
+  padding-top:14px;color:#555;
 }
 .ss-main{
   writing-mode:vertical-rl;
   flex:1 1 0;direction:ltr;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:flex-end;padding-bottom:2px;
+  justify-content:flex-start;padding-top:2px;
 }
 .ss-zoku{font-size:11px;display:block;margin-bottom:1px;}
 .ss-name{font-size:15px;font-weight:bold;letter-spacing:1px;line-height:1;display:block;}
-
 /* 住所 */
 #col-addr{
-  font-size:8.5px;line-height:1.4;padding:0 1px 8px 1px;overflow:hidden;
-  display:flex;align-items:flex-end;justify-content:center;
+  font-size:8.5px;line-height:1.4;padding:5px 1px;overflow:hidden;
+  display:flex;align-items:flex-start;justify-content:center;
 }
-
 /* ===== 遺族連名 ===== */
 #col-renmei{position:absolute;top:0;height:100%;overflow:hidden;}
-
+/* 簡易版(0名): 外親戚一同 1列 下揃え */
 .renmei-single{
   writing-mode:horizontal-tb;
   display:flex;flex-direction:row;
@@ -142,6 +123,7 @@ body{
   height:100%;
   padding-bottom:8px;
 }
+/* 通常版(n名): 2段組 */
 .renmei-2dan{
   writing-mode:horizontal-tb;
   display:flex;flex-direction:column;
@@ -163,7 +145,6 @@ body{
   align-items:center;justify-content:flex-end;
   height:90%;
 }
-
 /* フォームUI */
 .card{background:#fff;border-radius:12px;padding:28px 32px;width:min(860px,95vw);box-shadow:0 4px 20px rgba(0,0,0,.15);}
 .card h2{font-size:1.15rem;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #333;}
@@ -345,7 +326,6 @@ function render(){
   const renmeiRaw=(document.getElementById('renmei').value||'').split('\n').filter(l=>l.trim());
   const totalRenmei=renmeiRaw.length;
   document.getElementById('fw_info').textContent=totalRenmei+'名';
-
   const zokugara=document.getElementById('zokugara').value||'';
   const kyonen=document.getElementById('kyonen').value||'享年●歳';
   const kojinName=document.getElementById('kojin_name').value||'';
@@ -363,29 +343,26 @@ function render(){
   const pubDate=todayWareki();
 
   /* ============================================================
-   * レイアウト定数 (写真参照)
-   * H=300px, 横長台紙
+   * 台紙サイズ: 横長
+   * H=300px
+   * 前文テキスト文字数目安: 8.5px * 約33行縦書き
    * ============================================================ */
-  const H = 300;
-  const PAD = 6;
+  const H=300;
+  const PAD=6;
+  const wA=56;   // タイトル
+  const wC=70;   // 故人名
+  const wDi=maebunNai?46:0; // 施設名
+  const wD=106;  // 前文枠 (少し広く)
+  const wKi=22;  // 記
+  const wDt=86;  // 日時
+  const wBa=86;  // 場所
+  const wK=chuiLines.length>0?30*chuiLines.length:0; // 付記
+  const wI=22;   // 掲載日
+  const wG=60;   // 喪主
+  const wH=22;   // 住所
 
-  // 列幅(px)
-  const wA  = 56;  // タイトル「告別式のお知らせ」(22px*9文字縦書き)
-  const wC  = 70;  // 故人名(ふりがな11px+氏名28px+余白)
-  const wDi = maebunNai ? 46 : 0; // 施設名
-  const wD  = 96;  // 前文枠(8.5px*H=300で約35文字縦書き)
-  const wKi = 22;  // 記
-  const wDt = 86;  // 日時
-  const wBa = 86;  // 場所
-  const wK  = chuiLines.length > 0 ? 30 * chuiLines.length : 0; // 付記
-  const wI  = 22;  // 掲載日
-  const wG  = 60;  // 喪主
-  const wH  = 22;  // 住所
-
-  // 連名
-  const ITEM_W = 24;
+  const ITEM_W=24;
   let renmeiHTML='',renmeiWidth=0;
-
   if(totalRenmei===0){
     renmeiWidth=ITEM_W;
     renmeiHTML='<div class="renmei-single"><span class="r-item" style="width:'+ITEM_W+'px;font-size:11px;letter-spacing:1px">外親戚一同</span></div>';
@@ -399,10 +376,8 @@ function render(){
       '<div class="renmei-row-lower">'+lower.map(l=>'<span class="r-item" style="width:'+ITEM_W+'px">'+esc(l)+'</span>').join('')+'</div>'+
       '</div>';
   }
-
   const wJ=renmeiWidth;
   const totalW=PAD*2+wJ+wH+wG+wI+wK+wBa+wDt+wKi+wD+wDi+wC+wA;
-
   const daishi=document.getElementById('daishi');
   daishi.style.width=totalW+'px';
   daishi.style.height=H+'px';
@@ -422,7 +397,6 @@ function render(){
   const xA=x;
 
   daishi.innerHTML='';
-
   function col(id,left,width,html){
     if(width<=0)return;
     const d=document.createElement('div');
@@ -434,10 +408,7 @@ function render(){
     daishi.appendChild(d);
   }
 
-  /* A: タイトル */
   col('col-title',xA,wA,'告別式のお知らせ');
-
-  /* C: 故人名 */
   col('col-kojin',xC,wC,
     '<span class="kj-kana-col">'+esc(kojinKana)+'</span>'+
     '<span class="kj-main-col">'+
@@ -446,17 +417,9 @@ function render(){
       '<span class="kj-gi">儀</span>'+
     '</span>'
   );
-
-  /* D: 前文枠 */
   col('col-maebun',xD,wD,esc(maebun));
-
-  /* Di: 施設名 */
   if(wDi>0)col('col-maebun-nai',xDi,wDi,esc(maebunNai));
-
-  /* Ki: 記 */
   col('col-ki',xKi,wKi,'記');
-
-  /* Dt: 日時 */
   const tuyaText=KJ.tuya?'通夜　'+KJ.tuya:'';
   const kokuText=KJ.koku?'告別式　'+KJ.koku:'告別式　●';
   col('col-datetime',xDt,wDt,
@@ -464,8 +427,6 @@ function render(){
     (tuyaText?'<span style="display:block;font-size:10px;line-height:1.5">'+esc(tuyaText)+'</span>':'')+
     '<span style="display:block;font-size:10px;line-height:1.5">'+esc(kokuText)+'</span>'
   );
-
-  /* Ba: 場所 */
   const sm=sosai.match(/^([^（(]+)/);
   const sosaiMain=sm?sm[1].trim():sosai;
   const sosaiSub=sosai.replace(sosaiMain,'').trim();
@@ -474,14 +435,8 @@ function render(){
     '<span class="v-name">'+esc(sosaiMain)+'</span>'+
     (sosaiSub?'<span class="v-sub">'+esc(sosaiSub)+'</span>':'')
   );
-
-  /* K: 付記 */
   if(wK>0)col('col-chui',xK,wK,chuiLines.map(l=>'<span class="chui-item">'+esc(l)+'</span>').join(''));
-
-  /* I: 掲載日 */
   col('col-pubdate',xI,wI,pubDate);
-
-  /* G: 喪主 */
   col('col-soshu',xG,wG,
     '<span class="ss-label">喪主</span>'+
     '<span class="ss-kana">'+esc(soshuKana)+'</span>'+
@@ -490,11 +445,7 @@ function render(){
       '<span class="ss-name">'+esc(soshuName)+'</span>'+
     '</span>'
   );
-
-  /* H: 住所 */
   col('col-addr',xH,wH,soshuAddr?'（自宅＝'+esc(soshuAddr)+'）':'');
-
-  /* J: 連名 */
   if(wJ>0){
     const d=document.createElement('div');
     d.id='col-renmei';
