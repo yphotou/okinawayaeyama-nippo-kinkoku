@@ -5,333 +5,179 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>謹告台紙 通常版</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: #aaa;
-  font-family: 游明朝, "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 16px 80px;
-  gap: 36px;
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:#aaa;
+  font-family:游明朝,"Yu Mincho","ヒラギノ明朝 ProN W3","Hiragino Mincho ProN",serif;
+  display:flex;flex-direction:column;align-items:center;
+  padding:30px 16px 80px;gap:36px;
 }
-.daishi {
-  position: relative;
-  background: #fff;
-  border: 3px solid #000;
-  overflow: hidden;
-  flex-shrink: 0;
+.daishi{
+  position:relative;
+  background:#fff;
+  border:3px solid #000;
+  overflow:hidden;
+  flex-shrink:0;
 }
-.col {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  overflow: hidden;
+/* 縦書き列の基本 */
+.col{
+  position:absolute;top:0;height:100%;
+  writing-mode:vertical-rl;text-orientation:mixed;overflow:hidden;
 }
+
 /* タイトル列 */
-#col-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 6px;
-  line-height: 1.0;
-  padding: 8px 4px;
+#col-title{
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:900;letter-spacing:8px;line-height:1.0;
+  padding:8px 4px;
 }
+
 /* 故人名列 */
-#col-kojin {
-  writing-mode: horizontal-tb;
-  display: flex;
-  flex-direction: row;
-  direction: rtl;
-  align-items: flex-start;
-  padding: 8px 0;
-  overflow: hidden;
+#col-kojin{
+  writing-mode:horizontal-tb;
+  display:flex;flex-direction:row;direction:rtl;
+  align-items:flex-start;padding:8px 0;overflow:hidden;
 }
-.kj-kana {
-  writing-mode: vertical-rl;
-  font-size: 10px;
-  line-height: 1.2;
-  padding-top: 24px;
-  flex-shrink: 0;
-  width: 12px;
-  direction: ltr;
-}
-.kj-main {
-  writing-mode: vertical-rl;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 0;
-  direction: ltr;
-  padding: 0 2px;
-}
-.kj-zoku {
-  font-size: 13px;
-  display: block;
-  margin-bottom: 4px;
-  letter-spacing: 1px;
-}
-.kj-kanji {
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  line-height: 1.0;
-}
-.kj-gi {
-  font-size: 13px;
-  display: block;
-  margin-top: 4px;
-}
+.kj-kana{writing-mode:vertical-rl;font-size:10px;line-height:1.2;padding-top:28px;flex-shrink:0;width:13px;direction:ltr;}
+.kj-main{writing-mode:vertical-rl;display:flex;flex-direction:column;align-items:center;flex:1 1 0;direction:ltr;padding:0 2px;}
+.kj-zoku{font-size:14px;display:block;margin-bottom:4px;letter-spacing:1px;}
+.kj-kanji{font-size:32px;font-weight:900;letter-spacing:4px;line-height:1.0;}
+.kj-gi{font-size:14px;display:block;margin-top:6px;}
+
 /* 前文（施設名：枠の内側） */
-#col-maebun-nai {
-  font-size: 10px;
-  line-height: 1.4;
-  padding: 8px 2px;
-  overflow: hidden;
-}
+#col-maebun-nai{font-size:10px;line-height:1.45;padding:8px 3px;overflow:hidden;}
+
 /* 前文枠囲み */
-#col-maebun {
-  font-size: 11px;
-  line-height: 1.45;
-  border: 2px solid #000;
-  margin: 6px 0;
-  height: calc(100% - 12px);
-  padding: 6px 3px;
-  overflow: hidden;
+#col-maebun{
+  font-size:11px;line-height:1.5;
+  border:2px solid #000;
+  margin:6px 0;height:calc(100% - 12px);
+  padding:6px 4px;overflow:hidden;
 }
+
 /* 記 */
-#col-ki {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.4;
-  padding: 6px 2px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#col-ki{
+  font-size:18px;font-weight:bold;line-height:1.4;padding:6px 2px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
 }
+
 /* 日時 */
-#col-datetime {
-  font-size: 12px;
-  line-height: 1.5;
-  padding: 8px 2px;
-  overflow: hidden;
-}
-.dt-label {
-  font-weight: bold;
-  font-size: 15px;
-  display: block;
-  margin-bottom: 6px;
-}
+#col-datetime{font-size:12px;line-height:1.5;padding:8px 2px;overflow:hidden;}
+.dt-label{font-weight:bold;font-size:16px;display:block;margin-bottom:6px;}
+
 /* 場所 */
-#col-venue {
-  font-size: 12px;
-  line-height: 1.4;
-  padding: 8px 2px;
-  overflow: hidden;
-}
-.v-label {
-  font-weight: bold;
-  font-size: 15px;
-  display: block;
-  margin-bottom: 6px;
-}
-.v-name {
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-  line-height: 1.1;
-}
-.v-sub {
-  font-size: 10px;
-  display: block;
-}
+#col-venue{font-size:12px;line-height:1.4;padding:8px 2px;overflow:hidden;}
+.v-label{font-weight:bold;font-size:16px;display:block;margin-bottom:6px;}
+.v-name{font-size:16px;font-weight:bold;display:block;line-height:1.1;}
+.v-sub{font-size:10px;display:block;}
+
 /* 付記 */
-#col-chui {
-  font-size: 10px;
-  line-height: 1.4;
-  padding: 6px 2px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+#col-chui{
+  font-size:10px;line-height:1.4;padding:6px 2px;overflow:hidden;
+  display:flex;flex-direction:row;align-items:flex-start;
 }
-.chui-item {
-  writing-mode: vertical-rl;
-  display: block;
-  font-size: 10px;
-  line-height: 1.4;
-  flex-shrink: 0;
-  width: 34px;
-  padding: 0 2px;
-}
+.chui-item{writing-mode:vertical-rl;display:block;font-size:10px;line-height:1.4;flex-shrink:0;width:34px;padding:0 2px;}
+
 /* 掲載日 */
-#col-pubdate {
-  font-size: 11px;
-  line-height: 1.3;
-  padding: 8px 2px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#col-pubdate{
+  font-size:11px;line-height:1.3;padding:8px 2px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
 }
+
 /* 喪主 */
-#col-soshu {
-  writing-mode: horizontal-tb;
-  display: flex;
-  flex-direction: row;
-  direction: rtl;
-  align-items: flex-start;
-  padding: 8px 0;
-  overflow: hidden;
+#col-soshu{
+  writing-mode:horizontal-tb;
+  display:flex;flex-direction:row;direction:rtl;
+  align-items:flex-start;padding:8px 0;overflow:hidden;
 }
-.ss-label {
-  writing-mode: vertical-rl;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1.2;
-  flex-shrink: 0;
-  width: 14px;
-  direction: ltr;
-  padding-top: 2px;
-}
-.ss-kana {
-  writing-mode: vertical-rl;
-  font-size: 8px;
-  line-height: 1.2;
-  padding-top: 18px;
-  flex-shrink: 0;
-  width: 9px;
-  direction: ltr;
-}
-.ss-main {
-  writing-mode: vertical-rl;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 0;
-  direction: ltr;
-}
-.ss-zoku {
-  font-size: 13px;
-  display: block;
-  margin-bottom: 2px;
-}
-.ss-name {
-  font-size: 17px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  line-height: 1;
-}
+.ss-label{writing-mode:vertical-rl;font-size:13px;font-weight:bold;line-height:1.2;flex-shrink:0;width:16px;direction:ltr;padding-top:2px;}
+.ss-kana{writing-mode:vertical-rl;font-size:9px;line-height:1.2;padding-top:20px;flex-shrink:0;width:10px;direction:ltr;}
+.ss-main{writing-mode:vertical-rl;display:flex;flex-direction:column;align-items:center;flex:1 1 0;direction:ltr;}
+.ss-zoku{font-size:13px;display:block;margin-bottom:2px;}
+.ss-name{font-size:18px;font-weight:bold;letter-spacing:1px;line-height:1;}
+
 /* 住所 */
-#col-addr {
-  font-size: 11px;
-  line-height: 1.4;
-  padding: 8px 2px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#col-addr{font-size:11px;line-height:1.4;padding:8px 2px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+
+/* ===== 遺族連名エリア ===== */
+#col-renmei{position:absolute;top:0;height:100%;overflow:hidden;}
+
+/*
+  簡易版（連名0名）: 喪主 + 外親戚一同 を1段で横並び表示
+  通常版（連名あり）: 人数の半分で折り返し2段表示
+*/
+
+/* 簡易版1段レイアウト */
+.renmei-single{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end;
+  height:100%;
+  writing-mode:horizontal-tb;
+  padding-bottom:10px;
 }
-/* 遺族連名エリア */
-#col-renmei {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  overflow: hidden;
+
+/* 通常版2段レイアウト */
+.renmei-2dan{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  writing-mode:horizontal-tb;
 }
-/* 1段レイアウト（簡易版：喪主のみ or 連名少数） */
-.renmei-single {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  height: 100%;
-  writing-mode: horizontal-tb;
-  justify-content: flex-end;
-  padding-bottom: 8px;
+.renmei-row-upper{
+  display:flex;flex-direction:row;
+  align-items:flex-end;
+  height:50%;
+  padding-bottom:4px;
 }
-/* 2段レイアウト（通常版） */
-.renmei-2dan {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  writing-mode: horizontal-tb;
-  justify-content: flex-end;
+.renmei-row-lower{
+  display:flex;flex-direction:row;
+  align-items:flex-end;
+  height:50%;
+  padding-bottom:4px;
+  border-top:1px solid #ccc;
 }
-.renmei-row-upper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  height: 50%;
-  justify-content: flex-end;
-  padding-bottom: 4px;
-  border-bottom: 0;
+
+/* 連名の各アイテム */
+.r-item{
+  writing-mode:vertical-rl;
+  font-size:13px;line-height:1.2;
+  text-align:center;
+  flex-shrink:0;
+  overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
+  height:100%;justify-content:flex-end;
+  padding-bottom:4px;
 }
-.renmei-row-lower {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  height: 50%;
-  justify-content: flex-end;
-  padding-bottom: 4px;
-}
-.r-item {
-  writing-mode: vertical-rl;
-  font-size: 13px;
-  line-height: 1.2;
-  text-align: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.r-item-label {
-  writing-mode: vertical-rl;
-  font-size: 11px;
-  line-height: 1.2;
-  flex-shrink: 0;
-  color: #000;
-  margin-right: 2px;
-}
+
 /* フォームカード */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 28px 32px;
-  width: min(860px, 95vw);
-  box-shadow: 0 4px 20px rgba(0,0,0,.15);
-}
-.card h2 { font-size: 1.15rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; }
-.sec { font-weight: bold; font-size: .85rem; margin: 20px 0 8px; color: #555; }
-.f { margin-bottom: 12px; }
-.f label { display: block; font-size: .8rem; color: #555; margin-bottom: 4px; }
-.f input,.f select,.f textarea { width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 7px 10px; font-size: .95rem; font-family: inherit; }
-.f textarea { resize: vertical; min-height: 80px; }
-.r2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.dtf { margin-bottom: 12px; }
-.dtf > label { display: block; font-size: .8rem; color: #555; margin-bottom: 4px; }
-.dtr { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.dtr input[type="date"] { flex: 1 1 130px; }
-.dtr input[type="time"] { flex: 0 0 90px; }
-.kp { background: #f5f5f5; border-radius: 6px; padding: 6px 10px; font-size: .85rem; color: #333; margin-top: 4px; }
-.kp small { color: #888; margin-right: 4px; }
-.checks { display: flex; flex-direction: column; gap: 8px; }
-.chk { display: flex; align-items: center; gap: 8px; font-size: .85rem; cursor: pointer; }
-.chk input { width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
-.sld label { font-size: .8rem; color: #555; }
-.sld small { font-size: .8rem; color: #444; }
-.btn-go { display: block; width: 100%; padding: 12px; background: #1a1a2e; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 16px; }
-.btn-go:hover { background: #16213e; }
-.btn-pr { display: block; width: 100%; padding: 12px; background: #2d6a4f; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 8px; }
-@media print {
-  body { background: #fff; padding: 0; }
-  .card { display: none; }
-  .daishi { border: none; }
+.card{background:#fff;border-radius:12px;padding:28px 32px;width:min(860px,95vw);box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.card h2{font-size:1.15rem;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #333;}
+.sec{font-weight:bold;font-size:.85rem;margin:20px 0 8px;color:#555;}
+.f{margin-bottom:12px;}
+.f label{display:block;font-size:.8rem;color:#555;margin-bottom:4px;}
+.f input,.f select,.f textarea{width:100%;border:1px solid #ccc;border-radius:6px;padding:7px 10px;font-size:.95rem;font-family:inherit;}
+.f textarea{resize:vertical;min-height:80px;}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.dtf{margin-bottom:12px;}
+.dtf>label{display:block;font-size:.8rem;color:#555;margin-bottom:4px;}
+.dtr{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.dtr input[type="date"]{flex:1 1 130px;}
+.dtr input[type="time"]{flex:0 0 90px;}
+.kp{background:#f5f5f5;border-radius:6px;padding:6px 10px;font-size:.85rem;color:#333;margin-top:4px;}
+.kp small{color:#888;margin-right:4px;}
+.checks{display:flex;flex-direction:column;gap:8px;}
+.chk{display:flex;align-items:center;gap:8px;font-size:.85rem;cursor:pointer;}
+.chk input{width:16px;height:16px;cursor:pointer;flex-shrink:0;}
+.sld label{font-size:.8rem;color:#555;}
+.sld small{font-size:.8rem;color:#444;}
+.btn-go{display:block;width:100%;padding:12px;background:#1a1a2e;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer;margin-top:16px;}
+.btn-go:hover{background:#16213e;}
+.btn-pr{display:block;width:100%;padding:12px;background:#2d6a4f;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer;margin-top:8px;}
+@media print{
+  body{background:#fff;padding:0;}
+  .card{display:none;}
+  .daishi{border:none;}
 }
 </style>
 </head>
@@ -425,7 +271,7 @@ body {
     <div class="f"><label>喪主住所</label><input type="text" id="soshu_addr" value="" oninput="render()"></div>
   </div>
   <div class="f">
-    <label>遺族連名（1行1名 ※喪主以外。人数に応じて自動で1段/2段組。空の場合は「外親戚一同」のみ表示）</label>
+    <label>遺族連名（1行1名 ※喪主以外。空の場合は「喪主＋外親戚一同」を1段表示。1名以上は人数の半分で折り返し2段表示）</label>
     <textarea id="renmei" oninput="render()"></textarea>
   </div>
   <div class="sld" style="margin-top:12px">
@@ -443,8 +289,7 @@ function md(s){if(!s)return'';const[y,mm,dd]=s.split('-');return n2k(mm)+'月'+n
 function t2k(s){if(!s)return'';const[h,mi]=s.split(':').map(Number);const ap=h<12?'午前':'午後';const h12=h===0?12:h>12?h-12:h;return ap+n2k(h12)+'時'+(mi>0?n2k(mi)+'分':'');}
 function todayWareki(){const n=new Date();return wareki(n.getFullYear(),n.getMonth()+1,n.getDate());}
 function esc(s){s=String(s||'');s=s.split('&').join('&amp;');s=s.split('<').join('&lt;');s=s.split('>').join('&gt;');return s;}
-function escBR(s){return esc(s).replace(/
-/g,'<br>');}
+function escBR(s){return esc(s).replace(/\n/g,'<br>');}
 const KJ={shibo:'',tuya:'',koku:''};
 function calcKanji(){
   const sd=document.getElementById('shibo_date').value,st=document.getElementById('shibo_time').value;
@@ -477,8 +322,8 @@ function getMaebun(type,kyonen,shiboDt){
   const tail='ここに生前のご厚誼を深謝し謹んでお知らせ致します。尚、告別式は左記の通り相営みます。';
   switch(type){
     case'eimu':return shiboDt+'、'+kyonen+'を以て永眠致しました。'+tail;
-    case'byoki':return '病気療養中のところ'+shiboDt+'、'+kyonen+'を以て永眠致しました。'+tail;
-    case'furyou':return '不慮の事故により'+shiboDt+'、'+kyonen+'を以て急逝致しました。'+tail;
+    case'byoki':return'病気療養中のところ'+shiboDt+'、'+kyonen+'を以て永眠致しました。'+tail;
+    case'furyou':return'不慮の事故により'+shiboDt+'、'+kyonen+'を以て急逝致しました。'+tail;
     case'tenju':return shiboDt+'、'+kyonen+'の天寿を全うし永眠致しました。'+tail;
     case'shichishichi':{const sdt=document.getElementById('shichi_dt').value||'●月●日（○）';return shiboDt+'、'+kyonen+'を以て永眠致しました。'+tail+'※七七忌の法要は初七日の'+sdt+'に繰り上げ法要として四十九日と併せて執り行いますのでご了承下さい。';}
     default:return'';
@@ -519,100 +364,97 @@ function render(){
   const chuiLines=getChuiLines();
   const pubDate=todayWareki();
 
-  /*
-   * ===== 遺族連名レイアウト =====
-   * 簡易版（連名0名）: 「喪主○○」 + 「外親戚一同」を1段で表示
-   * 通常版（1名以上）: 喪主列は別途 + 連名を半分で折り返し2段表示
-   *   上段 = 前半（ceil(n/2)名）
-   *   下段 = 後半
-   * 1名あたり幅: 26px
+  /* ===== 遺族連名レイアウト =====
+   * 【簡易版】連名0名: 喪主列 + 「外親戚一同」を1段で表示
+   *   → renmeiWidthは「外親戚一同」1列分 = ITEM_W
+   *   → renmei-singleで横並び（右端揃え）
+   *
+   * 【通常版】連名1名以上: 人数の半分（ceil）で折り返し2段表示
+   *   → 上段 = 前半(ceil(n/2)名)、下段 = 後半
+   *   → renmeiWidthは ceil(n/2) * ITEM_W
    */
-  const ITEM_W = 26;
+  const ITEM_W=28;
+  let renmeiHTML='';
+  let renmeiWidth=0;
 
-  let renmeiHTML = '';
-  let renmeiWidth = 0;
-  let isSingle = false;  // 1段モード
-
-  if(totalRenmei === 0){
-    /* 簡易版: 外親戚一同のみ1段 */
-    isSingle = true;
-    renmeiWidth = ITEM_W;
-    renmeiHTML = '<div class="renmei-single">'
-      + '<span class="r-item" style="width:'+ITEM_W+'px;font-size:13px">外親戚一同</span>'
-      + '</div>';
+  if(totalRenmei===0){
+    /* 簡易版: 喪主 + 外親戚一同 を1段 */
+    renmeiWidth=ITEM_W;
+    renmeiHTML='<div class="renmei-single">'
+      +'<span class="r-item" style="width:'+ITEM_W+'px;font-size:12px;letter-spacing:2px">外親戚一同</span>'
+      +'</div>';
   } else {
-    /* 通常版: 2段表示 */
-    const half = Math.ceil(totalRenmei / 2);
-    const upper = renmeiRaw.slice(0, half);
-    const lower = renmeiRaw.slice(half);
-    renmeiWidth = ITEM_W * half;
-    renmeiHTML = '<div class="renmei-2dan">'
-      + '<div class="renmei-row-upper">'
-      + upper.map(l=>'<span class="r-item" style="width:'+ITEM_W+'px">'+esc(l)+'</span>').join('')
-      + '</div>'
-      + '<div class="renmei-row-lower">'
-      + lower.map(l=>'<span class="r-item" style="width:'+ITEM_W+'px">'+esc(l)+'</span>').join('')
-      + '</div>'
-      + '</div>';
+    /* 通常版: 2段 */
+    const half=Math.ceil(totalRenmei/2);
+    const upper=renmeiRaw.slice(0,half);
+    const lower=renmeiRaw.slice(half);
+    renmeiWidth=ITEM_W*half;
+    renmeiHTML='<div class="renmei-2dan">'
+      +'<div class="renmei-row-upper">'
+      +upper.map(l=>'<span class="r-item" style="width:'+ITEM_W+'px">'+esc(l)+'</span>').join('')
+      +'</div>'
+      +'<div class="renmei-row-lower">'
+      +lower.map(l=>'<span class="r-item" style="width:'+ITEM_W+'px">'+esc(l)+'</span>').join('')
+      +'</div>'
+      +'</div>';
   }
 
   /* ===== 列幅設計 ===== */
-  const PAD = 8;
-  const H = 370;
+  const PAD=8;
+  const H=370;
+  const wA=54;    /* タイトル */
+  const wC=74;    /* 故人名 */
+  const wDi=maebunNai?56:0; /* 施設名列 */
+  const wD=96;    /* 前文本文 */
+  const wKi=26;   /* 記 */
+  const wDt=90;   /* 日時 */
+  const wBa=90;   /* 場所 */
+  const wK=chuiLines.length>0?34*chuiLines.length:0; /* 付記 */
+  const wI=26;    /* 掲載日 */
+  const wG=66;    /* 喪主名 */
+  const wH=26;    /* 住所 */
+  const wJ=renmeiWidth; /* 連名 */
 
-  const wA  = 50;  /* タイトル */
-  const wC  = 70;  /* 故人名 */
-  const wDi = maebunNai ? 54 : 0; /* 施設名列 */
-  const wD  = 94;  /* 前文本文 */
-  const wKi = 24;  /* 記 */
-  const wDt = 86;  /* 日時 */
-  const wBa = 88;  /* 場所 */
-  const wK  = chuiLines.length > 0 ? 34 * chuiLines.length : 0; /* 付記 */
-  const wI  = 24;  /* 掲載日 */
-  const wG  = 62;  /* 喪主名 */
-  const wH  = 24;  /* 住所 */
-  const wJ  = renmeiWidth; /* 連名 */
+  const totalW=PAD*2+wJ+wH+wG+wI+wK+wBa+wDt+wKi+wD+wDi+wC+wA;
 
-  const totalW = PAD*2 + wJ + wH + wG + wI + wK + wBa + wDt + wKi + wD + wDi + wC + wA;
-
-  const daishi = document.getElementById('daishi');
-  daishi.style.width = totalW + 'px';
-  daishi.style.height = H + 'px';
+  const daishi=document.getElementById('daishi');
+  daishi.style.width=totalW+'px';
+  daishi.style.height=H+'px';
 
   /* ===== X座標（左端から） ===== */
-  let x = PAD;
-  const xJ = x; x += wJ;
-  const xH = x; x += wH;
-  const xG = x; x += wG;
-  const xI = x; x += wI;
-  let xK = -1;
-  if(wK>0){ xK = x; x += wK; }
-  const xBa = x; x += wBa;
-  const xDt = x; x += wDt;
-  const xKi = x; x += wKi;
-  const xD  = x; x += wD;
-  const xDi = x; x += wDi;
-  const xC  = x; x += wC;
-  const xA  = x;
+  let x=PAD;
+  const xJ=x; x+=wJ;
+  const xH=x; x+=wH;
+  const xG=x; x+=wG;
+  const xI=x; x+=wI;
+  let xK=-1;
+  if(wK>0){xK=x;x+=wK;}
+  const xBa=x; x+=wBa;
+  const xDt=x; x+=wDt;
+  const xKi=x; x+=wKi;
+  const xD=x; x+=wD;
+  const xDi=x; x+=wDi;
+  const xC=x; x+=wC;
+  const xA=x;
 
-  daishi.innerHTML = '';
+  daishi.innerHTML='';
 
-  function col(id, left, width, html, extraClass){
-    if(width <= 0) return;
-    const d = document.createElement('div');
-    d.className = 'col' + (extraClass ? ' ' + extraClass : '');
-    if(id) d.id = id;
-    d.style.left = left + 'px';
-    d.style.width = width + 'px';
-    d.innerHTML = html;
+  function col(id,left,width,html,extraClass){
+    if(width<=0)return;
+    const d=document.createElement('div');
+    d.className='col'+(extraClass?' '+extraClass:'');
+    if(id)d.id=id;
+    d.style.left=left+'px';
+    d.style.width=width+'px';
+    d.innerHTML=html;
     daishi.appendChild(d);
   }
 
   /* A: タイトル */
-  col('col-title', xA, wA, '告別式のお知らせ');
+  col('col-title',xA,wA,'告別式のお知らせ');
 
   /* C: 故人名 */
-  col('col-kojin', xC, wC,
+  col('col-kojin',xC,wC,
     '<span class="kj-kana">'+esc(kojinKana)+'</span>'
     +'<span class="kj-main">'
     +'<span class="kj-zoku">'+esc(zokugara)+'</span>'
@@ -622,48 +464,46 @@ function render(){
   );
 
   /* D: 前文枠囲み */
-  col('col-maebun', xD, wD, esc(maebun));
+  col('col-maebun',xD,wD,esc(maebun));
 
   /* Di: 施設名 */
-  if(wDi > 0){
-    col('col-maebun-nai', xDi, wDi,
-      '<span style="font-size:10px;line-height:1.4">'+esc(maebunNai)+'</span>'
-    );
+  if(wDi>0){
+    col('col-maebun-nai',xDi,wDi,'<span style="font-size:10px;line-height:1.45">'+esc(maebunNai)+'</span>');
   }
 
   /* Ki: 記 */
-  col('col-ki', xKi, wKi, '記');
+  col('col-ki',xKi,wKi,'記');
 
   /* Dt: 日時 */
-  const tuyaText = KJ.tuya ? '通夜 '+KJ.tuya : '';
-  const kokuText = KJ.koku ? '告別式 '+KJ.koku : '告別式 ●';
-  col('col-datetime', xDt, wDt,
+  const tuyaText=KJ.tuya?'通夜 '+KJ.tuya:'';
+  const kokuText=KJ.koku?'告別式 '+KJ.koku:'告別式 ●';
+  col('col-datetime',xDt,wDt,
     '<span class="dt-label">日時</span>'
-    + escBR((tuyaText ? tuyaText+'\n' : '') + kokuText)
+    +escBR((tuyaText?tuyaText+'\n':'')+kokuText)
   );
 
   /* Ba: 場所 */
-  const sm = sosai.match(/^([^（(]+)/);
-  const sosaiMain = sm ? sm[1].trim() : sosai;
-  const sosaiSub  = sosai.replace(sosaiMain,'').trim();
-  col('col-venue', xBa, wBa,
+  const sm=sosai.match(/^([^（(]+)/);
+  const sosaiMain=sm?sm[1].trim():sosai;
+  const sosaiSub=sosai.replace(sosaiMain,'').trim();
+  col('col-venue',xBa,wBa,
     '<span class="v-label">場所</span>'
     +'<span class="v-name">'+esc(sosaiMain)+'</span>'
-    +(sosaiSub ? '<span class="v-sub">'+esc(sosaiSub)+'</span>' : '')
+    +(sosaiSub?'<span class="v-sub">'+esc(sosaiSub)+'</span>':'')
   );
 
   /* K: 付記 */
-  if(wK > 0){
-    col('col-chui', xK, wK,
+  if(wK>0){
+    col('col-chui',xK,wK,
       chuiLines.map(l=>'<span class="chui-item">'+esc(l)+'</span>').join('')
     );
   }
 
   /* I: 掲載日 */
-  col('col-pubdate', xI, wI, pubDate);
+  col('col-pubdate',xI,wI,pubDate);
 
   /* G: 喪主名 */
-  col('col-soshu', xG, wG,
+  col('col-soshu',xG,wG,
     '<span class="ss-label">喪主</span>'
     +'<span class="ss-kana">'+esc(soshuKana)+'</span>'
     +'<span class="ss-main">'
@@ -673,22 +513,22 @@ function render(){
   );
 
   /* H: 住所 */
-  col('col-addr', xH, wH,
-    (soshuAddr ? '（自宅＝'+esc(soshuAddr)+'）' : '')
+  col('col-addr',xH,wH,
+    (soshuAddr?'（自宅＝'+esc(soshuAddr)+'）':'')
   );
 
   /* J: 連名 */
-  if(wJ > 0){
-    const d = document.createElement('div');
-    d.id = 'col-renmei';
-    d.style.left = xJ + 'px';
-    d.style.width = wJ + 'px';
-    d.innerHTML = renmeiHTML;
+  if(wJ>0){
+    const d=document.createElement('div');
+    d.id='col-renmei';
+    d.style.left=xJ+'px';
+    d.style.width=wJ+'px';
+    d.innerHTML=renmeiHTML;
     daishi.appendChild(d);
   }
 }
 
-window.onload = function(){ calcKanji(); };
+window.onload=function(){calcKanji();};
 </script>
 </body>
 </html>
