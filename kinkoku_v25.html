@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>謹告台紙 通常版</title><!-- v8 -->
+<title>謹告台紙 通常版</title><!-- v9 -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
@@ -66,14 +66,14 @@ body{
   text-orientation:upright;
   padding:4px 2px;overflow:hidden;
 }
-.ss-mark{font-size:9px;display:block;text-align:center;margin-bottom:1px;}
-.ss-label{font-size:11px;font-weight:bold;display:block;text-align:center;}
+.ss-mark{font-size:9px;display:block;text-align:center;margin-bottom:2px;}
+.ss-label{font-size:11px;font-weight:bold;display:block;text-align:center;margin-bottom:2px;}
 .ss-kana{font-size:7px;color:#555;display:block;text-align:center;margin-top:1px;text-orientation:mixed;}
-.ss-zoku{font-size:11px;display:block;text-align:center;margin-top:2px;}
-.ss-name{font-size:15px;font-weight:bold;display:block;text-align:center;letter-spacing:2px;margin-top:2px;}
+.ss-zoku{font-size:10px;display:block;text-align:center;margin-top:2px;}
+.ss-name{font-size:13px;font-weight:bold;display:block;text-align:center;letter-spacing:1px;margin-top:2px;}
 
 /* H: 住所 */
-#col-addr{font-size:8.5px;line-height:1.4;padding:5px 1px;overflow:hidden;text-orientation:upright;}
+#col-addr{font-size:8px;line-height:1.4;padding:5px 1px;overflow:hidden;text-orientation:upright;}
 
 /* J: 連名 */
 #col-renmei{position:absolute;top:0;height:100%;overflow:hidden;}
@@ -299,8 +299,8 @@ function render(){
   const wBa=86;
   const wK=chuiLines.length>0?30*chuiLines.length:0;
   const wI=22;
-  const wG=56;
-  const wH=22;
+  const wG=52;
+  const wH=20;
 
   const ITEM_W=24;
   let renmeiHTML='',renmeiWidth=0;
@@ -387,7 +387,6 @@ function render(){
 
   // 喪主: □マーク＋喪主ラベル＋ふりがな＋続柄＋氏名
   col('col-soshu',xG,wG,
-    '<span class="ss-mark">□</span>'+
     '<span class="ss-mark">□</span>'+
     '<span class="ss-label">喪主</span>'+
     (soshuKana?'<span class="ss-kana">'+esc(soshuKana)+'</span>':'')+
