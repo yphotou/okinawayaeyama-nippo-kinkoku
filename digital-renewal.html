@@ -147,7 +147,7 @@ a:hover{text-decoration:underline;}
 .highlight-box .hl-note{font-size:13px;color:#555;margin-top:6px;}
 
 .plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
-@media(max-width:640px){.plans-grid{grid-template-columns:1fr}}
+}
 .plan-card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:0}
 .plan-name{font-size:18px;font-weight:700;color:var(--red);margin-bottom:.5rem}
 .price-num{font-size:36px;font-weight:700;font-family:'Noto Serif JP',serif}
@@ -166,14 +166,22 @@ a:hover{text-decoration:underline;}
 .plan-note{font-size:12px;color:var(--red);font-weight:700;text-align:center;margin-top:.5rem}
 .plan-badge{display:inline-block;font-size:12px;color:#555;background:#f0f0ee;border-radius:3px;padding:3px 10px;margin-bottom:.25rem;line-height:1.5}
 
-@media(max-width:640px){
-  .sticky-bar{padding:.5rem 1rem;gap:.5rem}
   .sticky-bar .site-name{font-size:13px;white-space:nowrap;flex-shrink:0}
   .sticky-bar .page-label{display:none}
   .sticky-bar .date-label{display:none}
   .sticky-bar .register-btn{font-size:11px;padding:.4rem .65rem;white-space:nowrap;flex-shrink:0}
   .section-nav{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:.6rem 1rem;display:block}
   .section-nav a{display:inline-block;font-size:11px;padding:.35rem .6rem;margin-right:.25rem}
+}
+@media(max-width:640px){
+  .sticky-bar{padding:.5rem 1rem;gap:.5rem;flex-wrap:nowrap;overflow:hidden}
+  .site-name{font-size:14px;white-space:nowrap;flex-shrink:0;line-height:1.2}
+  .site-name span{display:none}
+  .bar-date{display:none}
+  .btn-primary{font-size:11px;padding:.4rem .65rem;white-space:nowrap;flex-shrink:0}
+  .section-nav{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:.6rem 1rem;display:block}
+  .section-nav a{display:inline-block;font-size:11px;padding:.35rem .6rem;margin-right:.25rem}
+  .plans-grid{grid-template-columns:1fr}
 }
 </style>
 </head><body>
