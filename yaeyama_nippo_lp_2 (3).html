@@ -148,21 +148,23 @@ a:hover{text-decoration:underline;}
 
 .plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
 @media(max-width:640px){.plans-grid{grid-template-columns:1fr}}
-.plan-card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
-.plan-name{font-size:18px;font-weight:700;color:var(--red)}
+.plan-card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:0}
+.plan-name{font-size:18px;font-weight:700;color:var(--red);margin-bottom:.5rem}
 .price-num{font-size:36px;font-weight:700;font-family:'Noto Serif JP',serif}
 .price-tax{font-size:13px;color:var(--text-light)}
-.plan-price-label{font-size:14px;font-weight:700;color:#1a1a1a;line-height:1.6}
+.plan-price{margin-bottom:.75rem}
+.plan-price-label{font-size:14px;font-weight:700;color:#1a1a1a;line-height:1.6;margin-bottom:.25rem}
 .plan-price-sub{font-size:12px;color:var(--text-light);font-weight:400}
 .plan-price-table{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:.25rem 0}
 .plan-price-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;font-size:13px;border-bottom:1px solid var(--border)}
 .plan-price-row:last-child{border-bottom:none}
 .plan-area{color:var(--text-light)}
 .plan-fee{font-weight:700;color:#1a1a1a}
-.plan-desc{font-size:13px;color:var(--text-light);line-height:1.8}
+.plan-desc{font-size:13px;color:var(--text-light);line-height:1.8;flex:1;margin-bottom:.75rem}
 .plan-btn{display:block;background:var(--red);color:#fff;text-align:center;padding:.75rem 1rem;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;margin-top:auto}
 .plan-btn:hover{background:var(--red-dark)}
-.plan-note{font-size:12px;color:var(--red);font-weight:700;text-align:center}
+.plan-note{font-size:12px;color:var(--red);font-weight:700;text-align:center;margin-top:.5rem}
+.plan-badge{display:inline-block;font-size:12px;color:#555;background:#f0f0ee;border-radius:3px;padding:3px 10px;margin-bottom:.25rem;line-height:1.5}
 </style>
 </head><body>
 <!-- STICKY HEADER BAR -->
@@ -401,6 +403,7 @@ a:hover{text-decoration:underline;}
     <div class="plans-grid">
       <div class="plan-card">
         <div class="plan-name">デジタルプラン</div>
+        <div class="plan-badge">オンライン完結</div>
         <div class="plan-price">月額 <span class="price-num">1,500</span>円<span class="price-tax">（税込）</span></div>
         <div class="plan-desc">紙面ビューアーとWebサイトの記事が読み放題。全国・海外からご利用いただけます。</div>
         <a href="#" class="plan-btn">会員登録はこちら →</a>
@@ -408,10 +411,11 @@ a:hover{text-decoration:underline;}
       </div>
       <div class="plan-card">
         <div class="plan-name">紙面セットプラン</div>
-        <div class="plan-price-label">紙面購読料にデジタル版が含まれます<br><span class="plan-price-sub">（追加料金なし）</span></div>
+        <div class="plan-badge">紙面購読料に含まれます（追加料金なし）</div>
         <div class="plan-price">月額 <span class="price-num">2,150</span>円〜<span class="price-tax">（税込）</span></div>
-        <div class="plan-desc">紙面購読者の方はデジタルプランの機能をすべて無料でご利用いただけます。紙面ビューアー・Webサイト記事読み放題が含まれます。</div>
+        <div class="plan-desc">紙面をご購読の方はデジタル版の機能をすべてご利用いただけます。紙面ビューアー・Webサイト記事読み放題が含まれます。</div>
         <a href="#" class="plan-btn">紙面購読のお申し込みはこちら →</a>
+        <div class="plan-note">&#8203;</div>
       </div>
     </div>
     <div class="corp-box">
