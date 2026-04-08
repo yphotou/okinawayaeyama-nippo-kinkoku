@@ -145,6 +145,24 @@ a:hover{text-decoration:underline;}
 .highlight-box .hl-period{font-size:20px;font-weight:700;color:#C70029;margin-bottom:8px;}
 .highlight-box .hl-sub{font-size:15px;color:#0a0a03;}
 .highlight-box .hl-note{font-size:13px;color:#555;margin-top:6px;}
+
+.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+@media(max-width:640px){.plans-grid{grid-template-columns:1fr}}
+.plan-card{border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.plan-name{font-size:18px;font-weight:700;color:var(--red)}
+.price-num{font-size:36px;font-weight:700;font-family:'Noto Serif JP',serif}
+.price-tax{font-size:13px;color:var(--text-light)}
+.plan-price-label{font-size:14px;font-weight:700;color:#1a1a1a;line-height:1.6}
+.plan-price-sub{font-size:12px;color:var(--text-light);font-weight:400}
+.plan-price-table{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:.25rem 0}
+.plan-price-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;font-size:13px;border-bottom:1px solid var(--border)}
+.plan-price-row:last-child{border-bottom:none}
+.plan-area{color:var(--text-light)}
+.plan-fee{font-weight:700;color:#1a1a1a}
+.plan-desc{font-size:13px;color:var(--text-light);line-height:1.8}
+.plan-btn{display:block;background:var(--red);color:#fff;text-align:center;padding:.75rem 1rem;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;margin-top:auto}
+.plan-btn:hover{background:var(--red-dark)}
+.plan-note{font-size:12px;color:var(--red);font-weight:700;text-align:center}
 </style>
 </head><body>
 <!-- STICKY HEADER BAR -->
@@ -376,26 +394,40 @@ a:hover{text-decoration:underline;}
   </section>
 
   <!-- 8. 各種プラン -->
-  <section class="section" id="plans">
-    <div class="section-tag">各種プラン</div>
-    <h2>ご利用シーンに合わせたプランをご用意しています</h2>
-    <div class="plan-cards">
+  <section id="plans" class="section">
+  <div class="container">
+    <div class="section-label">各種プラン</div>
+    <h2 class="section-title">ご利用シーンに合わせたプランをご用意しています</h2>
+    <div class="plans-grid">
       <div class="plan-card">
-        <div class="plan-name">同時ログイン</div>
-        <p>1アカウントで最大2デバイスまで同時にご利用いただけます。</p>
+        <div class="plan-name">デジタルプラン</div>
+        <div class="plan-price">月額 <span class="price-num">1,500</span>円<span class="price-tax">（税込）</span></div>
+        <div class="plan-desc">紙面ビューアーとWebサイトの記事が読み放題。全国・海外からご利用いただけます。</div>
+        <a href="#" class="plan-btn">会員登録はこちら →</a>
+        <div class="plan-note">5月31日まで無料でお試しいただけます</div>
       </div>
       <div class="plan-card">
-        <div class="plan-name">紙面購読者の方</div>
-        <p>紙面をご購読の方は、Webアプリ版を無料でご利用いただけます。</p>
+        <div class="plan-name">紙面セットプラン</div>
+        <div class="plan-price-label">紙面購読料にデジタル版が含まれます<br><span class="plan-price-sub">（追加料金なし）</span></div>
+        <div class="plan-price-table">
+          <div class="plan-price-row"><span class="plan-area">八重山郡内</span><span class="plan-fee">月極 2,150円（税込）</span></div>
+          <div class="plan-price-row"><span class="plan-area">沖縄県内</span><span class="plan-fee">月極 2,900円（税込・送料込み）</span></div>
+          <div class="plan-price-row"><span class="plan-area">県外・その他</span><span class="plan-fee">月極 3,810円（税込・送料込み）</span></div>
+        </div>
+        <div class="plan-desc">紙面購読者の方はデジタルプランの機能をすべて無料でご利用いただけます。紙面ビューアー・Webサイト記事読み放題が含まれます。</div>
+        <a href="#" class="plan-btn">紙面購読のお申し込みはこちら →</a>
       </div>
     </div>
-    <p style="font-size:14px;color:#777;">※ 同時ログイン数・紙面購読者の無料利用については、2026年5月7日に正式発表いたします。</p>
-    <div class="info-box" style="margin-top:24px;">
-      <div class="info-title">法人契約をご検討の方</div>
-      <p>法人向けプランもご用意予定です。請求書払い等、法人のニーズに合わせた契約形態に対応いたします。詳細はお問い合わせください。</p>
-      <p style="margin-top:12px;"><a href="mailto:info@yaeyama-nippo.co.jp" class="btn-outline">お問い合わせはこちら →</a></p>
+    <div class="plans-note">※ 各プランの詳細については、2026年5月7日に正式発表いたします。</div>
+    <div class="corp-box">
+      <div class="corp-content">
+        <div class="corp-title">法人契約をご検討の方</div>
+        <div class="corp-body">法人向けプランもご用意予定です。請求書払い等、法人のニーズに合わせた契約形態に対応いたします。詳細はお問い合わせください。</div>
+        <a href="#contact" class="corp-cta">お問い合わせはこちら →</a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 9. Q&A -->
   <section class="section" id="faq">
