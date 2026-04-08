@@ -24,345 +24,83 @@ body{
 }
 a{color:#C70029;text-decoration:none;}
 a:hover{text-decoration:underline;}
-
-/* ===== STICKY TOP BAR ===== */
 .sticky-bar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#fff;
+  position:sticky;top:0;z-index:100;background:#fff;
   border-bottom:2px solid #C70029;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;
   padding:10px 24px;
   box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
-.sticky-bar .site-name{
-  font-size:18px;
-  font-weight:700;
-  color:#0a0a03;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.sticky-bar .site-name span{
-  font-size:13px;
-  font-weight:400;
-  color:#555;
-  border-left:1px solid #ddd;
-  padding-left:12px;
-}
-.sticky-bar .bar-right{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-.sticky-bar .bar-date{
-  font-size:13px;
-  color:#555;
-}
+.sticky-bar .site-name{font-size:18px;font-weight:700;color:#0a0a03;display:flex;align-items:center;gap:12px;}
+.sticky-bar .site-name span{font-size:13px;font-weight:400;color:#555;border-left:1px solid #ddd;padding-left:12px;}
+.sticky-bar .bar-right{display:flex;align-items:center;gap:16px;}
+.sticky-bar .bar-date{font-size:13px;color:#555;}
 .btn-primary{
-  display:inline-block;
-  background:#C70029;
-  color:#fff !important;
-  font-size:15px;
-  font-weight:700;
-  padding:9px 22px;
-  border-radius:3px;
-  text-decoration:none !important;
-  transition:background 0.2s;
-  white-space:nowrap;
+  display:inline-block;background:#C70029;color:#fff !important;
+  font-size:15px;font-weight:700;padding:9px 22px;border-radius:3px;
+  text-decoration:none !important;transition:background 0.2s;white-space:nowrap;
 }
 .btn-primary:hover{background:#a80022;}
 .btn-outline{
-  display:inline-block;
-  border:2px solid #C70029;
-  color:#C70029 !important;
-  font-size:15px;
-  font-weight:700;
-  padding:7px 20px;
-  border-radius:3px;
-  text-decoration:none !important;
-  transition:all 0.2s;
+  display:inline-block;border:2px solid #C70029;color:#C70029 !important;
+  font-size:15px;font-weight:700;padding:7px 20px;border-radius:3px;
+  text-decoration:none !important;transition:all 0.2s;
 }
 .btn-outline:hover{background:#C70029;color:#fff !important;}
-
-/* ===== HERO ===== */
-.hero{
-  background:#fff;
-  border-bottom:1px solid #e0e0e0;
-  padding:52px 24px 48px;
-  text-align:center;
-}
-.hero .label{
-  display:inline-block;
-  background:#C70029;
-  color:#fff;
-  font-size:13px;
-  font-weight:700;
-  padding:4px 12px;
-  border-radius:2px;
-  margin-bottom:20px;
-  letter-spacing:0.05em;
-}
-.hero h1{
-  font-size:32px;
-  font-weight:700;
-  line-height:1.45;
-  color:#0a0a03;
-  margin-bottom:16px;
-}
-.hero .hero-sub{
-  font-size:16px;
-  color:#444;
-  line-height:1.75;
-  max-width:600px;
-  margin:0 auto 32px;
-}
-.hero-cta-box{
-  display:inline-block;
-  background:#fff;
-  border:2px solid #C70029;
-  border-radius:4px;
-  padding:20px 32px;
-  text-align:center;
-  max-width:420px;
-  width:100%;
-}
-.hero-cta-box .free-label{
-  font-size:13px;
-  color:#C70029;
-  font-weight:700;
-  margin-bottom:4px;
-}
-.hero-cta-box .free-period{
-  font-size:15px;
-  color:#0a0a03;
-  margin-bottom:16px;
-}
-.hero-cta-box .btn-primary{
-  width:100%;
-  text-align:center;
-  font-size:16px;
-  padding:13px 24px;
-}
-.hero-cta-box .cancel-note{
-  font-size:12px;
-  color:#777;
-  margin-top:8px;
-}
-
-/* ===== NAV ===== */
-.section-nav{
-  background:#f7f7f5;
-  border-bottom:1px solid #e0e0e0;
-  padding:0 24px;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-}
-.section-nav ul{
-  display:flex;
-  list-style:none;
-  gap:0;
-  white-space:nowrap;
-  max-width:800px;
-  margin:0 auto;
-}
-.section-nav ul li a{
-  display:block;
-  padding:14px 18px;
-  font-size:14px;
-  color:#555;
-  font-weight:700;
-  border-bottom:3px solid transparent;
-  transition:all 0.2s;
-}
-.section-nav ul li a:hover{
-  color:#C70029;
-  border-bottom-color:#C70029;
-  text-decoration:none;
-}
-
-/* ===== MAIN CONTENT ===== */
-.main-content{
-  max-width:760px;
-  margin:0 auto;
-  padding:0 24px 80px;
-}
-
-/* ===== SECTION ===== */
-.section{
-  padding:56px 0;
-  border-bottom:1px solid #e0e0e0;
-}
+.hero{background:#fff;border-bottom:1px solid #e0e0e0;padding:52px 24px 48px;text-align:center;}
+.hero .label{display:inline-block;background:#C70029;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:2px;margin-bottom:20px;letter-spacing:0.05em;}
+.hero h1{font-size:32px;font-weight:700;line-height:1.45;color:#0a0a03;margin-bottom:16px;}
+.hero .hero-sub{font-size:16px;color:#444;line-height:1.75;max-width:600px;margin:0 auto 32px;}
+.hero-cta-box{display:inline-block;background:#fff;border:2px solid #C70029;border-radius:4px;padding:20px 32px;text-align:center;max-width:420px;width:100%;}
+.hero-cta-box .free-label{font-size:13px;color:#C70029;font-weight:700;margin-bottom:4px;}
+.hero-cta-box .free-period{font-size:15px;color:#0a0a03;margin-bottom:16px;}
+.hero-cta-box .btn-primary{width:100%;text-align:center;font-size:16px;padding:13px 24px;}
+.hero-cta-box .cancel-note{font-size:12px;color:#777;margin-top:8px;}
+.section-nav{background:#f7f7f5;border-bottom:1px solid #e0e0e0;padding:0 24px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.section-nav ul{display:flex;list-style:none;gap:0;white-space:nowrap;max-width:800px;margin:0 auto;}
+.section-nav ul li a{display:block;padding:14px 18px;font-size:14px;color:#555;font-weight:700;border-bottom:3px solid transparent;transition:all 0.2s;}
+.section-nav ul li a:hover{color:#C70029;border-bottom-color:#C70029;text-decoration:none;}
+.main-content{max-width:760px;margin:0 auto;padding:0 24px 80px;}
+.section{padding:56px 0;border-bottom:1px solid #e0e0e0;}
 .section:last-child{border-bottom:none;}
-.section-tag{
-  display:inline-block;
-  font-size:12px;
-  font-weight:700;
-  color:#C70029;
-  border:1px solid #C70029;
-  padding:2px 10px;
-  border-radius:2px;
-  margin-bottom:12px;
-  letter-spacing:0.05em;
-}
-.section h2{
-  font-size:22px;
-  font-weight:700;
-  color:#0a0a03;
-  margin-bottom:20px;
-  line-height:1.45;
-  border-left:4px solid #C70029;
-  padding-left:14px;
-}
-.section p{
-  font-size:16px;
-  line-height:1.8;
-  color:#0a0a03;
-  margin-bottom:16px;
-}
-
-/* ===== STEP TIMELINE ===== */
-.timeline{
-  margin:32px 0;
-  position:relative;
-}
-.timeline::before{
-  content:'';
-  position:absolute;
-  left:28px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:#e0e0e0;
-}
-.tl-item{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  margin-bottom:32px;
-  position:relative;
-}
+.section-tag{display:inline-block;font-size:12px;font-weight:700;color:#C70029;border:1px solid #C70029;padding:2px 10px;border-radius:2px;margin-bottom:12px;letter-spacing:0.05em;}
+.section h2{font-size:22px;font-weight:700;color:#0a0a03;margin-bottom:20px;line-height:1.45;border-left:4px solid #C70029;padding-left:14px;}
+.section p{font-size:16px;line-height:1.8;color:#0a0a03;margin-bottom:16px;}
+/* 3行サマリー */
+.summary-3{display:flex;flex-direction:column;gap:12px;margin:32px 0;}
+.summary-item{display:flex;align-items:center;gap:16px;background:#fff8f8;border:1px solid #ffddd5;border-left:4px solid #C70029;border-radius:4px;padding:16px 20px;}
+.summary-icon{font-size:24px;flex-shrink:0;}
+.summary-body .summary-title{font-size:17px;font-weight:700;color:#0a0a03;margin-bottom:2px;}
+.summary-body .summary-desc{font-size:14px;color:#555;margin:0;}
+/* タイムライン */
+.timeline{margin:32px 0;position:relative;}
+.timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:#e0e0e0;}
+.tl-item{display:flex;gap:20px;align-items:flex-start;margin-bottom:32px;position:relative;}
 .tl-item:last-child{margin-bottom:0;}
-.tl-icon{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  font-weight:700;
-  flex-shrink:0;
-  position:relative;
-  z-index:1;
-  line-height:1.3;
-  text-align:center;
-}
+.tl-icon{width:56px;height:56px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;position:relative;z-index:1;line-height:1.3;text-align:center;}
 .tl-icon.active{background:#C70029;color:#fff;}
 .tl-icon.pending{background:#fff;color:#0a0a03;border:2px solid #ccc;}
 .tl-icon.future{background:#fff;color:#0a0a03;border:2px solid #ccc;}
-.tl-body{
-  flex:1;
-  padding-top:12px;
-}
+.tl-body{flex:1;padding-top:12px;}
 .tl-date{font-size:13px;color:#777;margin-bottom:4px;}
 .tl-title{font-size:17px;font-weight:700;color:#0a0a03;margin-bottom:4px;}
 .tl-desc{font-size:14px;color:#555;line-height:1.7;}
-
-/* ===== STEP FLOW (登録の流れ) ===== */
-.steps{
-  margin:28px 0;
-  counter-reset:step;
-}
-.step-item{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  margin-bottom:24px;
-  padding:20px;
-  background:#fafaf8;
-  border:1px solid #e8e8e4;
-  border-radius:4px;
-  position:relative;
-}
-.step-num{
-  width:40px;
-  height:40px;
-  background:#C70029;
-  color:#fff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:16px;
-  font-weight:700;
-  flex-shrink:0;
-}
-.step-body .step-title{
-  font-size:16px;
-  font-weight:700;
-  color:#0a0a03;
-  margin-bottom:6px;
-}
+.steps{margin:28px 0;counter-reset:step;}
+.step-item{display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;padding:20px;background:#fafaf8;border:1px solid #e8e8e4;border-radius:4px;position:relative;}
+.step-num{width:40px;height:40px;background:#C70029;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;}
+.step-body .step-title{font-size:16px;font-weight:700;color:#0a0a03;margin-bottom:6px;}
 .step-body p{font-size:15px;color:#444;margin-bottom:4px;}
-.step-badge{
-  display:inline-block;
-  font-size:12px;
-  padding:2px 10px;
-  border-radius:2px;
-  font-weight:700;
-  margin-top:4px;
-}
+.step-badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:2px;font-weight:700;margin-top:4px;}
 .step-badge.free{background:#e8f5e9;color:#2e7d32;}
 .step-badge.no-charge{background:#fff3e0;color:#e65100;}
 .step-badge.start{background:#e3f2fd;color:#1565c0;}
-
-/* ===== INFO BOX ===== */
-.info-box{
-  background:#fafaf8;
-  border:1px solid #e0e0e0;
-  border-left:4px solid #C70029;
-  border-radius:4px;
-  padding:20px 24px;
-  margin:24px 0;
-}
-.info-box .info-title{
-  font-size:15px;
-  font-weight:700;
-  color:#0a0a03;
-  margin-bottom:8px;
-}
+.info-box{background:#fafaf8;border:1px solid #e0e0e0;border-left:4px solid #C70029;border-radius:4px;padding:20px 24px;margin:24px 0;}
+.info-box .info-title{font-size:15px;font-weight:700;color:#0a0a03;margin-bottom:8px;}
 .info-box p{font-size:15px;color:#444;line-height:1.75;margin-bottom:0;}
-.info-row{
-  display:flex;
-  gap:16px;
-  margin:12px 0;
-  align-items:flex-start;
-}
-.info-row .info-key{
-  font-size:14px;
-  font-weight:700;
-  color:#555;
-  min-width:90px;
-  flex-shrink:0;
-}
+.info-row{display:flex;gap:16px;margin:12px 0;align-items:flex-start;}
+.info-row .info-key{font-size:14px;font-weight:700;color:#555;min-width:90px;flex-shrink:0;}
 .info-row .info-val{font-size:15px;color:#0a0a03;}
-
-/* ===== PRICE BOX ===== */
-.price-change{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  margin:24px 0;
-  padding:20px 24px;
-  background:#fff8f8;
-  border:1px solid #ffddd5;
-  border-radius:4px;
-}
+.price-change{display:flex;align-items:center;gap:16px;margin:24px 0;padding:20px 24px;background:#fff8f8;border:1px solid #ffddd5;border-radius:4px;}
 .price-before{text-align:center;}
 .price-before .label{font-size:12px;color:#777;margin-bottom:4px;}
 .price-before .amount{font-size:22px;font-weight:700;color:#555;text-decoration:line-through;}
@@ -372,149 +110,43 @@ a:hover{text-decoration:underline;}
 .price-after .amount{font-size:28px;font-weight:700;color:#C70029;}
 .price-after .sub{font-size:12px;color:#555;}
 .price-diff{margin-left:auto;background:#C70029;color:#fff;border-radius:3px;padding:6px 12px;font-size:14px;font-weight:700;text-align:center;white-space:nowrap;}
-
-/* ===== REASON LIST ===== */
-.reason-list{
-  margin:24px 0;
-}
-.reason-item{
-  padding:20px 0;
-  border-bottom:1px solid #e8e8e4;
-}
+.reason-list{margin:24px 0;}
+.reason-item{padding:20px 0;border-bottom:1px solid #e8e8e4;}
 .reason-item:last-child{border-bottom:none;}
-.reason-item .reason-num{
-  font-size:12px;
-  color:#C70029;
-  font-weight:700;
-  margin-bottom:6px;
-}
-.reason-item h3{
-  font-size:17px;
-  font-weight:700;
-  color:#0a0a03;
-  margin-bottom:8px;
-}
+.reason-item .reason-num{font-size:12px;color:#C70029;font-weight:700;margin-bottom:6px;}
+.reason-item h3{font-size:17px;font-weight:700;color:#0a0a03;margin-bottom:8px;}
 .reason-item p{font-size:15px;color:#444;line-height:1.8;margin-bottom:0;}
-
-/* ===== PLAN TABLE ===== */
-.plan-cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin:24px 0;
-}
-.plan-card{
-  background:#fafaf8;
-  border:1px solid #e0e0e0;
-  border-radius:4px;
-  padding:20px;
-}
+.plan-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.plan-card{background:#fafaf8;border:1px solid #e0e0e0;border-radius:4px;padding:20px;}
 .plan-card .plan-name{font-size:14px;font-weight:700;color:#C70029;margin-bottom:8px;}
 .plan-card p{font-size:14px;color:#444;line-height:1.7;margin-bottom:0;}
-
-/* ===== FAQ ===== */
 .qa-list{margin:24px 0;}
 .qa-item{border-bottom:1px solid #e0e0e0;}
-.qa-q{
-  width:100%;
-  text-align:left;
-  background:none;
-  border:none;
-  padding:18px 0;
-  font-size:16px;
-  font-weight:700;
-  color:#0a0a03;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-family:inherit;
-}
+.qa-q{width:100%;text-align:left;background:none;border:none;padding:18px 0;font-size:16px;font-weight:700;color:#0a0a03;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;}
 .qa-q .q-icon{font-size:11px;color:#C70029;font-weight:700;transition:transform 0.2s;border:1px solid #C70029;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .qa-item.open .q-icon{transform:rotate(45deg);}
-.qa-a{
-  display:none;
-  padding:0 0 18px;
-  font-size:15px;
-  color:#444;
-  line-height:1.8;
-}
+.qa-a{display:none;padding:0 0 18px;font-size:15px;color:#444;line-height:1.8;}
 .qa-item.open .qa-a{display:block;}
-
-/* ===== CONTACT ===== */
-.contact-box{
-  background:#fafaf8;
-  border:1px solid #e0e0e0;
-  border-radius:4px;
-  padding:28px 32px;
-  margin:24px 0;
-}
+.contact-box{background:#fafaf8;border:1px solid #e0e0e0;border-radius:4px;padding:28px 32px;margin:24px 0;}
 .contact-box h3{font-size:17px;font-weight:700;color:#0a0a03;margin-bottom:16px;}
 .contact-item{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
 .contact-item .contact-icon{color:#C70029;font-weight:700;min-width:24px;}
 .contact-item .contact-detail{font-size:15px;color:#0a0a03;line-height:1.6;}
 .contact-item .contact-note{font-size:13px;color:#777;}
-
-/* ===== FOOTER CTA ===== */
-.footer-cta{
-  background:#C70029;
-  color:#fff;
-  text-align:center;
-  padding:48px 24px;
-}
+.footer-cta{background:#C70029;color:#fff;text-align:center;padding:48px 24px;}
 .footer-cta h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;}
 .footer-cta p{font-size:15px;color:rgba(255,255,255,0.85);margin-bottom:24px;}
-.footer-cta .btn-white{
-  display:inline-block;
-  background:#fff;
-  color:#C70029 !important;
-  font-size:16px;
-  font-weight:700;
-  padding:13px 32px;
-  border-radius:3px;
-  text-decoration:none !important;
-}
+.footer-cta .btn-white{display:inline-block;background:#fff;color:#C70029 !important;font-size:16px;font-weight:700;padding:13px 32px;border-radius:3px;text-decoration:none !important;}
 .footer-cta .cancel-note{font-size:13px;color:rgba(255,255,255,0.75);margin-top:10px;}
-
-/* ===== SITE FOOTER ===== */
-.site-footer{
-  background:#f7f7f5;
-  border-top:1px solid #ddd;
-  padding:32px 24px;
-  text-align:center;
-}
+.site-footer{background:#f7f7f5;border-top:1px solid #ddd;padding:32px 24px;text-align:center;}
 .site-footer p{font-size:13px;color:#777;line-height:1.8;}
 .site-footer address{font-style:normal;font-size:13px;color:#777;margin-top:8px;}
-
-/* ===== AD NOTICE ===== */
-.ad-notice{
-  margin-bottom:28px;
-  padding:10px 16px;
-  background:#fff;
-  border:1px solid #e0e0e0;
-  border-radius:3px;
-  display:inline-block;
-  font-size:14px;
-  color:#555;
-}
-.ad-notice::before{content:"● ";color:#C70029;}
-
-/* ===== HIGHLIGHT BOX ===== */
-.highlight-box{
-  background:#fff8f8;
-  border:2px solid #C70029;
-  border-radius:4px;
-  padding:24px 28px;
-  margin:28px 0;
-  text-align:center;
-}
+.highlight-box{background:#fff8f8;border:2px solid #C70029;border-radius:4px;padding:24px 28px;margin:28px 0;text-align:center;}
 .highlight-box .hl-period{font-size:20px;font-weight:700;color:#C70029;margin-bottom:8px;}
 .highlight-box .hl-sub{font-size:15px;color:#0a0a03;}
 .highlight-box .hl-note{font-size:13px;color:#555;margin-top:6px;}
-
 </style>
 </head><body>
-
 <!-- STICKY HEADER BAR -->
 <header class="sticky-bar">
   <div class="site-name">
@@ -527,11 +159,10 @@ a:hover{text-decoration:underline;}
   </div>
 </header>
 
-<!-- HERO -->
+<!-- 1. HERO -->
 <section class="hero">
-  
-  
-  <h1>沖縄八重山日報デジタル版が生まれ変わります。</h1><p class="hero-subtitle" style="font-size: 26px; font-weight: 700; color: rgb(51, 51, 51); margin-top: 8px; margin-bottom: 0px;">全面リニューアルに伴うサービス移行のご案内</p>
+  <h1>沖縄八重山日報デジタル版が生まれ変わります。</h1>
+  <p class="hero-subtitle" style="font-size:26px;font-weight:700;color:#333;margin-top:8px;margin-bottom:0;">全面リニューアルに伴うサービス移行のご案内</p>
   <p class="hero-sub">このページでは、移行のスケジュール・ご請求への不安・価格改定の理由・特別価格の詳細についてくわしくご説明しています。</p>
   <div class="hero-cta-box" id="pre-register">
     <div class="free-label">会員登録受付中</div>
@@ -544,10 +175,12 @@ a:hover{text-decoration:underline;}
 <!-- NAV -->
 <nav class="section-nav">
   <ul>
-    
-    <li><a href="#flow">登録の流れ</a></li>
+    <li><a href="#summary">ご安心ポイント</a></li>
+    <li><a href="#timeline">スケジュール</a></li>
+    <li><a href="#current-plan">現在のご契約</a></li>
     <li><a href="#billing">請求・課金</a></li>
     <li><a href="#price">値上げの理由</a></li>
+    <li><a href="#flow">事前登録</a></li>
     <li><a href="#plans">各種プラン</a></li>
     <li><a href="#faq">よくある質問</a></li>
   </ul>
@@ -556,22 +189,156 @@ a:hover{text-decoration:underline;}
 <!-- MAIN CONTENT -->
 <main class="main-content">
 
-  <!-- サービス移行のスケジュール -->
-  
+  <!-- 2. 3行サマリー -->
+  <section class="section" id="summary">
+    <div class="section-tag">まずここだけ読んでください</div>
+    <h2>3つのことだけ、覚えておいてください</h2>
+    <div class="summary-3">
+      <div class="summary-item">
+        <div class="summary-icon">✅</div>
+        <div class="summary-body">
+          <div class="summary-title">手続きは不要です</div>
+          <div class="summary-desc">現在のサービスは自動で終了します。App StoreやGoogle Playでの解約操作は必要ありません。</div>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon">✅</div>
+        <div class="summary-body">
+          <div class="summary-title">二重請求は発生しません</div>
+          <div class="summary-desc">旧サービスの課金は更新日に自動停止。新サービスの課金は6月1日から開始。同時に請求されることは構造上ありません。</div>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon">✅</div>
+        <div class="summary-body">
+          <div class="summary-title">5月6日まで今のアプリで読めます</div>
+          <div class="summary-desc">突然使えなくなることはありません。更新終了後も2026年5月6日まで現在のアプリで記事をお読みいただけます。</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- 事前登録・特別価格 -->
+  <!-- 3. タイムライン -->
+  <section class="section" id="timeline">
+    <div class="section-tag">移行スケジュール</div>
+    <h2>全体の流れをひと目で確認</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-icon active">現在<br>受付中</div>
+        <div class="tl-body">
+          <div class="tl-date">2026年4月〜</div>
+          <div class="tl-title">事前登録受付中</div>
+          <div class="tl-desc">新サービスへの事前登録が可能です。登録時の課金はありません。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon pending">〜5/6</div>
+        <div class="tl-body">
+          <div class="tl-date">〜2026年5月6日</div>
+          <div class="tl-title">現在のアプリで閲覧継続</div>
+          <div class="tl-desc">現在の契約は次回更新日に自動終了。それ以降も5月6日まではアプリで記事をお読みいただけます。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon pending">5/7</div>
+        <div class="tl-body">
+          <div class="tl-date">2026年5月7日（木）</div>
+          <div class="tl-title">新サービス開始・無料期間スタート</div>
+          <div class="tl-desc">新しいデジタル版がスタート。5月31日まで全員無料でご利用いただけます。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon future">6/1</div>
+        <div class="tl-body">
+          <div class="tl-date">2026年6月1日（月）</div>
+          <div class="tl-title">月額課金開始（¥1,500/月）</div>
+          <div class="tl-desc">6月1日より月額1,500円（税込）の課金が開始されます。5月31日までの解約は無料です。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 現在のご契約 -->
+  <section class="section" id="current-plan">
+    <div class="section-tag">現在のご契約</div>
+    <h2>今のご契約について、安心してください</h2>
+    <p>現在ご利用中のアプリは、お客様の次回更新日に自動的に契約が終了します。App StoreやGoogle Playでの解約操作は必要ありません。</p>
+    <div class="info-box">
+      <div class="info-title">現在のご契約まとめ</div>
+      <div class="info-row">
+        <span class="info-key">解約操作</span><span class="info-val">不要（自動終了）</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">継続閲覧</span><span class="info-val">更新終了後も5月6日まで無料閲覧継続</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">通知</span><span class="info-val">閲覧終了前にアプリ内・Webにてお知らせします</span>
+      </div>
+    </div>
+    <p>ご自身で解約操作をされた場合でも、解約済み期間分の日割り返金はApp Store・Google Playの規約に準じます。ご不明な場合は各ストアのサポートにお問い合わせください。</p>
+  </section>
+
+  <!-- 5. 請求・課金 -->
+  <section class="section" id="billing">
+    <div class="section-tag">請求・課金</div>
+    <h2>二重請求は、構造上発生しません</h2>
+    <p>旧サービス（App Store・Google Play経由）の課金は更新日をもって自動停止します。新サービスの課金は6月1日から開始されます。</p>
+    <div class="info-box">
+      <div class="info-title">課金の仕組み</div>
+      <p>旧プランと新プランが同時に課金されることは構造上あり得ません。万が一、ご請求内容にご不明な点が生じた場合は、お問い合わせ窓口へご連絡ください。速やかに確認・対応いたします。</p>
+    </div>
+  </section>
+
+  <!-- 6. 価格改定 -->
+  <section class="section" id="price">
+    <div class="section-tag">価格改定</div>
+    <h2>値上げの理由を、具体的にご説明します</h2>
+    <div class="price-change">
+      <div class="price-before">
+        <div class="label">現行</div>
+        <div class="amount">¥990</div>
+      </div>
+      <div class="price-arrow">→</div>
+      <div class="price-after">
+        <div class="label">新プラン</div>
+        <div class="amount">¥1,500</div>
+        <div class="sub">月額（税込）</div>
+      </div>
+      <div class="price-diff">+510円の改定</div>
+    </div>
+    <div class="reason-list">
+      <div class="reason-item">
+        <div class="reason-num">① 理由 1</div>
+        <h3>Web版の記事がアプリ内でも読めます</h3>
+        <p>現行アプリは紙面ビューアーのみでした。新サービスでは速報ニュース・詳報・写真ギャラリーなど、これまでアプリからアクセスできなかったすべてのWebコンテンツがアプリから直接読めるようになります。読める情報量が、根本的に変わります。</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">② 理由 2</div>
+        <h3>Web限定の記事・特集企画が増えます</h3>
+        <p>紙面連動にとどまらないWeb独自の記事・特集企画を拡充します。八重山の自然・文化・暮らし・地域経済など、紙面では伝えきれなかったテーマを深掘りするコンテンツを継続的にお届けします。</p>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">③ 理由 3</div>
+        <h3>安定した配信のために、システムを強化</h3>
+        <p>アクセスが集中しても止まらない安定した配信環境を構築し、個人情報・決済データを守るセキュリティを強化します。読者の皆様に安心してご利用いただける環境を整えます。</p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="info-title">皆様の購読が、沖縄の報道を支えています</div>
+      <p>皆様からいただく購読料が、この地域の取材・報道を直接支える力になっています。八重山から沖縄全県へ——デジタルプランへのご支援が、地域の記録を守り続け、報道の幅を広げていくことにつながります。値上げのご負担をおかけすることは忸怩たる思いですが、どうかご理解をいただけますと幸いです。</p>
+    </div>
+  </section>
+
+  <!-- 7. 事前登録・特別価格 -->
   <section class="section" id="flow">
     <div class="section-tag">事前登録・特別価格</div>
     <h2>事前に登録して、5月は丸ごと無料で使えます</h2>
-
     <div class="highlight-box">
       <div class="hl-period">5月7日〜5月31日 無料</div>
       <div class="hl-sub">登録者全員が対象</div>
       <div class="hl-note">新サービスへご登録いただいたすべての方が対象です。</div>
     </div>
-
     <p>事前登録された方も、5月7日のサービス開始と同時に無料期間がスタートします。</p>
-
     <div class="info-box">
       <div class="info-title">課金開始日</div>
       <div class="info-row">
@@ -580,8 +347,7 @@ a:hover{text-decoration:underline;}
       </div>
       <p>6月1日以降は月額1,500円（税込）。解約はいつでも可能です。</p>
     </div>
-
-    <h2 style="margin-top:40px;">登録の流れ（6ステップ）</h2>
+    <h2 style="margin-top:40px;">登録の流れ（4ステップ）</h2>
     <div class="steps">
       <div class="step-item">
         <div class="step-num">1</div>
@@ -616,78 +382,12 @@ a:hover{text-decoration:underline;}
         </div>
       </div>
     </div>
-
-    <div class="info-box">
-      <div class="info-title">現在のご契約について</div>
-      <p><strong>今のアプリは5月6日まで使えます。手続きは不要です。</strong></p>
-      <p style="margin-top:8px;">現在のご契約は、お客様の次回更新日に自動的に終了します。App StoreやGoogle Playでの解約操作は必要ありません。更新日以降も、2026年5月6日までは現在のアプリで記事をお読みいただけます。突然使えなくなることはありません。</p>
-      <div class="info-row" style="margin-top:12px;">
-        <span class="info-key">解約操作</span><span class="info-val">不要</span>
-      </div>
-      <div class="info-row">
-        <span class="info-key">継続閲覧</span><span class="info-val">5月6日まで無料閲覧継続</span>
-      </div>
-    </div>
-  </section>
-  <!-- 請求・課金 -->
-  <section class="section" id="billing">
-    <div class="section-tag">請求・課金</div>
-    <h2>二重請求は、構造上発生しません</h2>
-    <p>旧サービス（App Store・Google Play経由）の課金は更新日をもって自動停止します。新サービスの課金は6月1日から開始されます。</p>
-    <div class="info-box">
-      <div class="info-title">課金の仕組み</div>
-      <p>旧プランと新プランが同時に課金されることは構造上あり得ません。万が一、ご請求内容にご不明な点が生じた場合は、お問い合わせ窓口へご連絡ください。速やかに確認・対応いたします。</p>
-    </div>
   </section>
 
-  <!-- 価格改定 -->
-  <section class="section" id="price">
-    <div class="section-tag">価格改定</div>
-    <h2>値上げの理由を、具体的にご説明します</h2>
-
-    <div class="price-change">
-      <div class="price-before">
-        <div class="label">現行</div>
-        <div class="amount">¥990</div>
-      </div>
-      <div class="price-arrow">→</div>
-      <div class="price-after">
-        <div class="label">新プラン</div>
-        <div class="amount">¥1,500</div>
-        <div class="sub">月額（税込）</div>
-      </div>
-      <div class="price-diff">+510円の改定</div>
-    </div>
-
-    <div class="reason-list">
-      <div class="reason-item">
-        <div class="reason-num">① 理由 1</div>
-        <h3>Web版の記事がアプリ内でも読めます</h3>
-        <p>現行アプリは紙面ビューアーのみでした。新サービスでは速報ニュース・詳報・写真ギャラリーなど、これまでアプリからアクセスできなかったすべてのWebコンテンツがアプリから直接読めるようになります。読める情報量が、根本的に変わります。</p>
-      </div>
-      <div class="reason-item">
-        <div class="reason-num">② 理由 2</div>
-        <h3>Web限定の記事・特集企画が増えます</h3>
-        <p>紙面連動にとどまらないWeb独自の記事・特集企画を拡充します。八重山の自然・文化・暮らし・地域経済など、紙面では伝えきれなかったテーマを深掘りするコンテンツを継続的にお届けします。</p>
-      </div>
-      <div class="reason-item">
-        <div class="reason-num">③ 理由 3</div>
-        <h3>安定した配信のために、システムを強化</h3>
-        <p>アクセスが集中しても止まらない安定した配信環境を構築し、個人情報・決済データを守るセキュリティを強化します。読者の皆様に安心してご利用いただける環境を整えます。</p>
-      </div>
-    </div>
-
-    <div class="info-box">
-      <div class="info-title">皆様の購読が、沖縄の報道を支えています</div>
-      <p>皆様からいただく購読料が、この地域の取材・報道を直接支える力になっています。八重山から沖縄全県へ——デジタルプランへのご支援が、地域の記録を守り続け、報道の幅を広げていくことにつながります。値上げのご負担をおかけすることは忸怩たる思いですが、どうかご理解をいただけますと幸いです。</p>
-    </div>
-  </section>
-
-  <!-- 各種プラン -->
+  <!-- 8. 各種プラン -->
   <section class="section" id="plans">
     <div class="section-tag">各種プラン</div>
     <h2>ご利用シーンに合わせたプランをご用意しています</h2>
-
     <div class="plan-cards">
       <div class="plan-card">
         <div class="plan-name">同時ログイン</div>
@@ -698,16 +398,15 @@ a:hover{text-decoration:underline;}
         <p>紙面をご購読の方は、Webアプリ版を無料でご利用いただけます。</p>
       </div>
     </div>
-
     <p style="font-size:14px;color:#777;">※ 同時ログイン数・紙面購読者の無料利用については、2026年5月7日に正式発表いたします。</p>
-
     <div class="info-box" style="margin-top:24px;">
       <div class="info-title">法人契約をご検討の方</div>
       <p>法人向けプランもご用意予定です。請求書払い等、法人のニーズに合わせた契約形態に対応いたします。詳細はお問い合わせください。</p>
       <p style="margin-top:12px;"><a href="mailto:info@yaeyama-nippo.co.jp" class="btn-outline">お問い合わせはこちら →</a></p>
     </div>
   </section>
-  <!-- よくある質問 -->
+
+  <!-- 9. Q&A -->
   <section class="section" id="faq">
     <div class="section-tag">よくある質問</div>
     <h2>Q&amp;A</h2>
@@ -747,7 +446,7 @@ a:hover{text-decoration:underline;}
     </div>
   </section>
 
-  <!-- お問い合わせ -->
+  <!-- 10. CTA・お問い合わせ -->
   <section class="section">
     <div class="section-tag">お問い合わせ</div>
     <h2>ご不明な点はお気軽に</h2>
@@ -796,5 +495,4 @@ document.querySelectorAll('.qa-q').forEach(function(btn){
   });
 });
 </script>
-
 </body></html>
